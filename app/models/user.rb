@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 
   before_validation :set_uid
 
+  has_many :articles, dependent: :destroy
+
   private
 
   def set_uid
